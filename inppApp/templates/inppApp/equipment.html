@@ -3,9 +3,9 @@
 {% block title %}Sous réseaux{% endblock title %}
 
 {% block content %}
-{% for e in equipments %}
 <div class="row">
-    <div class="col-4">
+{% for e in equipments %}
+    <div class="col-12 col-md-4 gy-4 gx-3">
         <a class="card border border-primary text-decoration-none" href="{% url "open-putty" e.adresse_ip %}">
             <div class="card-body">
                 <div>
@@ -19,8 +19,8 @@
             </div>
         </a>
     </div>
+    {% empty %}
+    <h3>Rien à afficher !</h3>
+    {% endfor %}
 </div>
-{% empty %}
-<h3>Rien à afficher !</h3>
-{% endfor %}
 {% endblock content %}

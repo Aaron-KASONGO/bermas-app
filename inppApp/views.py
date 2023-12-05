@@ -28,3 +28,8 @@ def equipment(request, id):
 def open_putty(request, ip):
     subprocess.run(["putty", "open", str(ip)])
     return render(request, "inppApp/success.html")
+
+def search(request):
+    query = request.GET['q']
+    sites = Site.objects.filter(nom__icontains=q)
+    return return render(request, "inppApp/home.html", {'sites': sites})
