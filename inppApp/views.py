@@ -26,5 +26,5 @@ def equipment(request, id):
 
 @login_required(login_url='/admin/login')
 def open_putty(request, ip):
-    subprocess.run(["ls", "-l"])
+    subprocess.run(["putty", "open", str(ip)])
     return render(request, "inppApp/success.html")

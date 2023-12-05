@@ -3,9 +3,9 @@
 {% block title %}Sous réseaux{% endblock title %}
 
 {% block content %}
-{% for s in sous_reseaux %}
 <div class="row">
-    <div class="col-4">
+{% for s in sous_reseaux %}
+    <div class="col-12 col-md-4 gy-4 gx-3">
         <a class="card border border-primary text-decoration-none" href="{% url 'equipment' s.id %}">
             <div class="card-body">
                 <div>
@@ -19,8 +19,8 @@
             </div>
         </a>
     </div>
+    {% empty %}
+    <h3>Rien à afficher !</h3>
+    {% endfor %}
 </div>
-{% empty %}
-<h3>Rien à afficher !</h3>
-{% endfor %}
 {% endblock content %}
