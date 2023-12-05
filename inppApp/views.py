@@ -32,4 +32,4 @@ def open_putty(request, ip):
 def search(request):
     query = request.GET['q']
     sites = Site.objects.filter(nom__icontains=q)
-    return return render(request, "inppApp/home.html", {'sites': sites})
+    return render(request, "inppApp/home.html", {'sites': sites})
